@@ -1,5 +1,5 @@
 package hej;
-import User;
+import hej.Database;
 
 import java.util.ArrayList;
 
@@ -32,5 +32,55 @@ public class Database {
 			}
 		}
 		return null;
+	}
+	public boolean TransferUser(String name){
+		User user = getTransfer(name);
+		if(user!=null){
+			return true;
+		}
+		return false;
+	}
+	
+	public User getTransfer(String name){
+		for(User user:users){
+			if(user.getName().equals(name)){
+				return user;
+			}
+		}
+		return null;
+	}
+	
+	
+	//	get og set metoder til users
+	public ArrayList<User> getUsers() {
+		return users;
+	}
 
+	public void setUsers(ArrayList<User> users) {
+		Database.users = users;
+	}
+	//	get og set metoder til currentuser
+	public User getCurrentUser() {
+		return currentUser;
+	}
+
+	public void setCurrentUser(User currentUser) {
+		this.currentUser = currentUser;
+	}
+	//	get og set metoder til transferuser
+	public User getTransferUser() {
+		return transferUser;
+	}
+
+	public void setTransferUser(User transferUser) {
+		this.transferUser = transferUser;
+	}
+
+	public Double getBtcRate() {
+		return btcRate;
+	}
+
+	public void setBtcRate(Double btcRate) {
+		this.btcRate = btcRate;
+	}
 }

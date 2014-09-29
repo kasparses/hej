@@ -1,5 +1,4 @@
 package hej;
-
 import javax.swing.JOptionPane;
 
 
